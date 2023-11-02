@@ -35,7 +35,7 @@ fun ImgSlider(item: Int) {
 @Preview
 @Composable
 fun PictureSlider() {
-    Box(modifier = Modifier.padding(24.dp, 0.dp, 0.dp, 51.dp)) {
+    Box(modifier = Modifier.padding(24.dp, 0.dp, 0.dp, 0.dp)) {
         LazyRow(modifier = Modifier
             .fillMaxWidth()
 

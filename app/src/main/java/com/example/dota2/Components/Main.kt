@@ -22,7 +22,7 @@ fun Main() {
     Column (
         modifier = Modifier
             .background(Color(0xFF050B18))
-            .height(930.dp)
+            .height(1230.dp)
             .offset(y = -31.dp)
 
     ){
@@ -38,6 +38,8 @@ fun Main() {
             modifier = Modifier.padding(24.dp, 49.dp, 24.dp, 46.dp)
         )
         PictureSlider()
+        Rating()
+        Comments()
         InstallButton()
     }
 }
