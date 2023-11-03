@@ -25,7 +25,7 @@ fun Main() {
     Column (
         modifier = Modifier
             .background(Color(0xFF050B18))
-            .height(1230.dp)
+            .height(930.dp)
             .offset(y = -31.dp)
 
     ){
@@ -61,11 +61,12 @@ fun Main() {
                 }
             }
         }
+        Category()
         Text(text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the 'Ancient', whilst defending their own.",
             fontFamily = fontF, fontWeight = FontWeight.Normal,
             fontSize = 12.sp, lineHeight = 19.sp,
             color = Color(0xB2EEF2FB),
-            modifier = Modifier.padding(24.dp, 49.dp, 24.dp, 46.dp)
+            modifier = Modifier.padding(24.dp, 24.dp, 24.dp, 21.dp)
         )
         PictureSlider()
         Rating()
