@@ -1,2 +1,2 @@
-![plot](./screenshots/src1.jpg)
-![plot](./screenshots/src2.jpg)
+![plot](./screenshots/scr1.jpg)
+![plot](./screenshots/scr2.jpg)
