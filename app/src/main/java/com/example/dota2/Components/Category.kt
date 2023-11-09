@@ -26,7 +26,7 @@ fun Category() {
         itemsIndexed(cat) { _, item ->
             Box(
                 Modifier
-                    .padding(bottom = 10.dp)
+                    .padding(bottom = 10.dp, end = 10.dp)
                     .background(color = BlueUnContrast, shape = RoundedCornerShape(size = 100.dp))
             )
             {
