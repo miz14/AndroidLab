@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Dota2</string>
+    <string name="downloads">70M</string>
+    <string name="game_description">Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the "Ancient", whilst defending their own.</string>
+    <string-array name="category_list">
+        <item>MOBA</item>
+        <item>MULTIPLAYER</item>
+        <item>STRATEGY</item>
+    </string-array>
+    <string-array name="Comment1">
+        <item>Auguste Conte</item>
+        <item>February 14, 2023</item>
+        <item>“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”</item>
+    </string-array>
+    <string-array name="Comment2">
+        <item>Jang Marcelino</item>
+        <item>February 14, 2019</item>
+        <item>“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”</item>
+    </string-array>
+    <string name="Install">Install</string>
+    <string name="Raiting_title">"Review and Ratings"</string>
+    <string name="Raiting_num">4.9</string>
+    <string name="Raiting_rev">70M Reviews</string>
 </resources>

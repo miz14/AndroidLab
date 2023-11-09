@@ -9,48 +9,62 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.dota2.ui.theme.LightGray
+import com.example.dota2.ui.theme.NewGray
+import com.example.dota2.ui.theme.White
+import com.example.dota2.ui.theme.fontF
 
 @Preview
 @Composable
 fun Rating() {
-    Column (Modifier
-        .padding(24.dp, 20.dp, 24.dp, 0.dp)){
-        Text(text = "Review and Ratings",
+    Column(
+        Modifier
+            .padding(24.dp, 20.dp, 24.dp, 0.dp)
+    ) {
+        Text(
+            text = stringResource(R.string.Raiting_title),
             fontSize = 16.sp,
             fontFamily = fontF,
             fontWeight = FontWeight.Bold,
-            color = Color(0xFFEEF2FB),
-
+            color = NewGray,
             letterSpacing = 0.6.sp,
-
             modifier = Modifier
-                .padding(0.dp, 0.dp, 0.dp, 12.dp))
+                .padding(bottom = 12.dp)
+        )
         Row {
-            Text(text = "4.9",
+            Text(
+                text = stringResource(R.string.Raiting_num),
                 fontSize = 48.sp,
                 fontFamily = fontF,
                 fontWeight = FontWeight.Bold,
-                color = Color(0xFFFFFFFF))
-            Column (Modifier
-                .padding(16.dp, 17.dp, 0.dp, 0.dp)){
-                Image(painter = painterResource(R.drawable.stars), contentDescription = null,
+                color = White
+            )
+            Column(
+                Modifier
+                    .padding(start = 16.dp, top = 17.dp)
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.stars), contentDescription = null,
                     modifier = Modifier
                         .width(76.dp)
-                        .height(12.dp))
-                Text(text = "70M Reviews",
+                        .height(12.dp)
+                )
+                Text(
+                    text = stringResource(R.string.Raiting_rev),
                     fontSize = 12.sp,
                     fontFamily = fontF,
                     fontWeight = FontWeight.Normal,
-                    color = Color(0xFFA8ADB7),
+                    color = LightGray,
                     letterSpacing = 0.5.sp,
                     modifier = Modifier
-                        .padding(0.dp, 8.dp, 0.dp, 0.dp))
+                        .padding(top = 8.dp)
+                )
             }
         }
     }

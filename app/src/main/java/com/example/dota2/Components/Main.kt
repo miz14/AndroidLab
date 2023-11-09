@@ -11,61 +11,73 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import com.example.dota2.ui.theme.BlackUnContrast
+import com.example.dota2.ui.theme.DarkGray
+import com.example.dota2.ui.theme.NewGray
+import com.example.dota2.ui.theme.White
+import com.example.dota2.ui.theme.fontF
 
 @Preview
 @Composable
 fun Main() {
-    Column (
+    Column(
         modifier = Modifier
-            .background(Color(0xFF050B18))
+            .background(BlackUnContrast)
             .height(930.dp)
             .offset(y = -31.dp)
-
-    ){
-        Row (modifier = Modifier
-            .padding(24.dp, 0.dp)
-            ){
+    ) {
+        Row(
+            modifier = Modifier
+                .padding(24.dp, 0.dp)
+        ) {
             Icon()
-            Column (Modifier
-                .padding(12.dp, 34.dp, 0.dp, 0.dp)){
-                Text(text = "DoTA 2",
+            Column(
+                Modifier
+                    .padding(start = 12.dp, top = 34.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.app_name),
                     fontSize = 20.sp,
                     lineHeight = 26.sp,
                     fontFamily = fontF,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFFFFFFFF),
-
+                    color = White,
                     letterSpacing = 0.5.sp,
                     modifier = Modifier
-                        .padding(0.dp, 0.dp, 0.dp, 7.dp))
+                        .padding(bottom = 7.dp)
+                )
                 Row {
-                    Image(painter = painterResource(R.drawable.starslogo), contentDescription = null,
+                    Image(
+                        painter = painterResource(R.drawable.starslogo), contentDescription = null,
                         modifier = Modifier
                             .width(76.dp)
-                            .height(12.dp))
-                    Text(text = "70M",
+                            .height(12.dp)
+                    )
+                    Text(
+                        text = stringResource(R.string.downloads),
                         fontSize = 12.sp,
                         fontFamily = fontF,
                         fontWeight = FontWeight.Normal,
-                        color = Color(0xFF45454D),
+                        color = DarkGray,
                         letterSpacing = 0.5.sp,
                         modifier = Modifier
-                            .padding(10.dp, 0.dp, 0.dp, 0.dp))
+                            .padding(start = 10.dp)
+                    )
                 }
             }
         }
         Category()
-        Text(text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the 'Ancient', whilst defending their own.",
+        Text(
+            text = stringResource(R.string.game_description),
             fontFamily = fontF, fontWeight = FontWeight.Normal,
             fontSize = 12.sp, lineHeight = 19.sp,
-            color = Color(0xB2EEF2FB),
+            color = NewGray,
             modifier = Modifier.padding(24.dp, 24.dp, 24.dp, 21.dp)
         )
         PictureSlider()

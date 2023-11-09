@@ -1,34 +1,25 @@
 package com.example.dota2
 
 import android.os.Bundle
-import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.view.WindowCompat
-
+import com.example.dota2.ui.theme.Dota2Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            Column (
-                Modifier
-                    .verticalScroll(rememberScrollState())){
-                HeaderIMG()
-                Main()
+            Dota2Theme {
+                LazyColumn() {
+                    item {
+                        HeaderIMG()
+                        Main()
+                    }
+                }
             }
         }
     }
@@ -41,11 +32,4 @@ fun Fun() {
         HeaderIMG()
         Main()
     }
-
 }
-
-val fontF = FontFamily(
-    Font(R.font.sk_modernist_bold, FontWeight.Bold),
-    Font(R.font.sk_modernist_regular, FontWeight.Normal),
-    Font(R.font.sk_modernist_mono, FontWeight.Medium)
-)

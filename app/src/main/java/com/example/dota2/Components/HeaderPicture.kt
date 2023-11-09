@@ -14,19 +14,19 @@ import androidx.compose.ui.unit.dp
 @Preview
 @Composable
 fun HeaderIMG() {
-    Box (modifier = Modifier
-        .fillMaxWidth()
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
 
-    ){
-        Image(painter = painterResource(R.drawable.gamebg),
+    ) {
+        Image(
+            painter = painterResource(R.drawable.gamebg),
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(312.64.dp)
                 .aspectRatio(1f),
 
-        )
-
-
+            )
     }
 }

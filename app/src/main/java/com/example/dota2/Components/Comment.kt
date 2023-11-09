@@ -12,14 +12,17 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import com.example.dota2.ui.theme.Gray
+import com.example.dota2.ui.theme.LightGray
+import com.example.dota2.ui.theme.LineBorder
+import com.example.dota2.ui.theme.White
+import com.example.dota2.ui.theme.fontF
 
 data class CommentInfo(
     val img: Int,
@@ -32,63 +35,73 @@ data class CommentInfo(
 fun Comment(com: CommentInfo) {
     Column() {
         Row {
-            Image(painter = painterResource(com.img), contentDescription = null,
+            Image(
+                painter = painterResource(com.img), contentDescription = null,
                 modifier = Modifier
                     .size(36.dp)
-                    )
-            Column (
+            )
+            Column(
                 modifier = Modifier
-                    .padding(16.dp, 0.dp)){
-                Text(text = com.name,
+                    .padding(16.dp, 0.dp)
+            ) {
+                Text(
+                    text = com.name,
                     fontSize = 16.sp,
                     fontFamily = fontF,
                     fontWeight = FontWeight.Normal,
-                    color = Color(0xFFFFFFFF),
+                    color = White,
                     letterSpacing = 0.5.sp,
                     modifier = Modifier
-                        .padding(0.dp, 0.dp, 0.dp, 7.dp))
-                Text(text = com.data,
+                        .padding(bottom = 7.dp)
+                )
+                Text(
+                    text = com.data,
                     fontSize = 12.sp,
                     fontFamily = fontF,
                     fontWeight = FontWeight.Normal,
-                    color = Color(0x66FFFFFF),
-                    letterSpacing = 0.5.sp,)
+                    color = Gray,
+                    letterSpacing = 0.5.sp,
+                )
             }
         }
-        Text(text = com.comment,
+        Text(
+            text = com.comment,
             fontSize = 12.sp,
             lineHeight = 20.sp,
             fontFamily = fontF,
             fontWeight = FontWeight.Normal,
-            color = Color(0xFFA8ADB7),
+            color = LightGray,
             letterSpacing = 0.5.sp,
             modifier = Modifier
-                .padding(0.dp, 17.dp, 0.dp, 0.dp)
-            )
-
+                .padding(top = 17.dp)
+        )
     }
 }
 
-var data1 = CommentInfo(R.drawable.comment1, "Auguste Conte", "February 14, 2023", "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”")
-var data2 = CommentInfo(R.drawable.comment2, "Jang Marcelino", "February 14, 2019", "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”")
 @Preview
 @Composable
 fun Comments() {
-    Column (modifier = Modifier
-        .padding(24.dp, 30.dp, 24.dp, 40.dp)
+    val data1 = stringArrayResource(R.array.Comment1)
+    val data2 = stringArrayResource(R.array.Comment2)
+    val com1 = CommentInfo(R.drawable.comment1, data1[0], data1[1], data1[2])
+    val com2 = CommentInfo(R.drawable.comment2, data2[0], data2[1], data2[2])
+    Column(
+        modifier = Modifier
+            .padding(24.dp, 30.dp, 24.dp, 40.dp)
+    ) {
+        Comment(com1)
+        Box(
+            Modifier
+                .padding(0.dp, 24.dp)
         ) {
-        Comment(data1)
-        Box(Modifier
-            .padding(0.dp, 24.dp)) {
             Box(
                 Modifier
-                    .border(width = 1.dp, color = Color(0xFF1A1F29))
+                    .border(width = 1.dp, color = LineBorder)
                     .height(1.dp)
                     .padding(14.dp, 0.dp)
                     .fillMaxWidth()
             )
         }
-        Comment(data2)
+        Comment(com2)
     }
-
 }
